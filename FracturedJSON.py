@@ -1,6 +1,7 @@
-import fractured_json_rust_wrapper
 import json
 from typing import Callable
+
+import fractured_json_rust_wrapper
 
 
 class Encoder(json.encoder.JSONEncoder):
