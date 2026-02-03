@@ -11,3 +11,20 @@ dynamic = ["version"]
 [build-system]
 requires = ["maturin>=1.11,<2.0"]
 build-backend = "maturin"
+
+
+[tool.ruff.lint]
+extend-select = [
+    "BLE",  # Blind exceptions
+    "FBT",  # Boolean trap
+    "A",    # Builtin shadowing
+    "C4",   # Comprehensions
+    "LOG",  # Logging
+    "G",    # Logging formatting
+    "PT",   # Pytest
+    "SIM",  # Simplifications
+    "TID",  # Tidy imports
+    "PTH",  # Use Pathlib instead of os.path etc
+    "I",    # isort
+    "C901", # flake8-c901 complexity
+]
