@@ -1,6 +1,6 @@
 """Internal. Wraps a rust file, that reformats a json string to FracturedJSON"""
 
-def reformat_string(input_string: str, *, indent=4, line_length=120) -> str:
+def reformat_string(input_string: str, *, indent:int, line_length:int) -> str:
     """Reformat a JSON string.
     
     Args:

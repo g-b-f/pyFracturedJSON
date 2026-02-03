@@ -1,12 +1,17 @@
 [project]
 name = "pyfracturedjson"
 requires-python = ">=3.8"
+description = "A compact yet readable JSON formatter"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
+keywords = ["json", "formatter", "fracturedjson", "compact", "readable"]
 dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/g-b-f/pyFracturedJSON"
 
 [build-system]
 requires = ["maturin>=1.11,<2.0"]

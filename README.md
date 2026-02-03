@@ -15,4 +15,10 @@ data = {"abcd": "abcd", "long_list": long_list}
 print(json.dumps(data, cls=Encoder))
 print(json.dumps(data, cls=Encoder, line_length=50))
 print(json.dumps(data, cls=Encoder, indent=2))
+
+with open("file.json", "w") as f:
+    json.dump(data, f, cls=Encoder)
 ```
+
+This is mostly a wrapper around [fracturedjson-rs](https://github.com/fcoury/fracturedjson-rs),
+so all credit goes to the creator.
