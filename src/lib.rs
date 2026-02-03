@@ -1,13 +1,22 @@
+#![allow(non_snake_case)]
 use pyo3::prelude::*;
+use fracturedjson::Formatter;
 
-/// A Python module implemented in Rust.
+#[pyfunction]
+fn reformat(input: String) -> String {
+    let mut formatter = Formatter::new();
+    let formatted = formatter.reformat(&input, 0);
+    let output = formatted.expect("Unexpected output");
+    return output
+
+}
+
+/// A Python module implemented in Rust. The name of this function must match
+/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
+/// import the module.
 #[pymodule]
-mod pyFracturedJSON {
-    use pyo3::prelude::*;
+fn pyFracturedJSON(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(reformat, m)?)?;
 
-    /// Formats the sum of two numbers as string.
-    #[pyfunction]
-    fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
-        Ok((a + b).to_string())
-    }
+    Ok(())
 }
