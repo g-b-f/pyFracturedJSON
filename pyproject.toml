@@ -33,3 +33,8 @@ extend-select = [
     "I",    # isort
     "C901", # flake8-c901 complexity
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
