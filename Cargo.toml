@@ -9,5 +9,5 @@ name = "fractured_json_rust_wrapper"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.27.0"
+pyo3 = "0.28.0"
 fracturedjson = "0.1.1"

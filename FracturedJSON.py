@@ -40,5 +40,5 @@ class Encoder(json.encoder.JSONEncoder):
             unformatted,
             indent=self._indent,
             line_length=self.line_length
-            )
+        )
         return formatted
