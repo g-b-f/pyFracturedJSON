@@ -1,7 +1,9 @@
-import FracturedJSON as json
-import pytest
-from pathlib import Path
 import json as builtin_json
+from pathlib import Path
+
+import pytest
+
+import FracturedJSON as json
 
 params = [
     ("default_settings.json", {}),

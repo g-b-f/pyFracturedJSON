@@ -29,7 +29,6 @@ extend-select = [
     "PT",   # Pytest
     "SIM",  # Simplifications
     "TID",  # Tidy imports
-    "PTH",  # Use Pathlib instead of os.path etc
     "I",    # isort
     "C901", # flake8-c901 complexity
 ]

@@ -1,5 +1,5 @@
-from collections.abc import Iterator
 import json
+from collections.abc import Iterator
 from typing import Callable
 
 import fractured_json_rust_wrapper
