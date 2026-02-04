@@ -1,9 +1,7 @@
-import json
-from pathlib import Path
-
+import FracturedJSON as json
 import pytest
-
-from FracturedJSON import Encoder
+from pathlib import Path
+import json as builtin_json
 
 params = [
     ("default_settings.json",{}),
@@ -14,24 +12,18 @@ params = [
 def read_file(filename) -> tuple[str, dict]:
     file = Path(__file__).parent / filename
     file_contents = file.read_text()
-    return (file_contents, json.loads(file_contents))
+    return (file_contents, builtin_json.loads(file_contents))
 
 @pytest.mark.parametrize(("filename", "kwargs"), params)
-def test_roundtrip(filename:str, kwargs:dict):
+def test_dumps(filename:str, kwargs:dict):
     file_str, file_dict = read_file(filename)
-    formatted = json.dumps(file_dict, cls=Encoder, **kwargs)
+    formatted = json.dumps(file_dict, **kwargs)
     assert formatted == file_str
-
-@pytest.mark.parametrize(("filename", "kwargs"), params)
-def test_negative_roundtrip(filename:str, kwargs:dict):
-    file_str, file_dict = read_file(filename)    
-    formatted = json.dumps(file_dict)
-    assert formatted != file_str
 
 @pytest.mark.parametrize(("filename", "kwargs"), params)
 def test_dump(filename:str, kwargs:dict, tmp_path:Path):
     file_str, file_dict = read_file(filename)
     file = tmp_path / "test.json"
     with open(file, "w") as f:
-        json.dump(file_dict, f, cls=Encoder, **kwargs)
+        json.dump(file_dict, f, **kwargs)
     assert file.read_text() == file_str

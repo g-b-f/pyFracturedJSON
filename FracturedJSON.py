@@ -1,3 +1,4 @@
+from collections.abc import Iterator
 import json
 from typing import Callable
 
@@ -43,3 +44,22 @@ class Encoder(json.encoder.JSONEncoder):
             line_length=self.line_length
         )
         return formatted
+    
+    def iterencode(self, o, *args, **kwargs) -> Iterator[str]:
+        return iter(self.encode(o))
+
+
+def dump(*args, **kwargs):
+    return json.dump(cls=Encoder, *args, **kwargs)
+
+def dumps(*args, **kwargs):
+    return json.dumps(cls=Encoder, *args, **kwargs)
+
+def load(*args, **kwargs):
+    return json.load(*args, **kwargs)
+
+def loads(*args, **kwargs):
+    return json.loads(*args, **kwargs)
+
+def detect_encoding(b):
+    return json.detect_encoding(b)
