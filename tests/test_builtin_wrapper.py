@@ -4,9 +4,9 @@ from pathlib import Path
 import json as builtin_json
 
 params = [
-    ("default_settings.json",{}),
-    ("line_len_100.json",{"line_length":100}),
-    ("indent_2.json",{"indent":2}),
+    ("default_settings.json", {}),
+    ("line_len_100.json", {"line_length":100}),
+    ("indent_2.json", {"indent":2}),
 ]
 
 def read_file(filename) -> tuple[str, dict]:
