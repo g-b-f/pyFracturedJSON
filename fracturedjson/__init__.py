@@ -2,7 +2,7 @@ import json
 from collections.abc import Iterator
 from typing import Callable
 
-import fractured_json_rust_wrapper
+import _rust_wrapper
 
 
 class Encoder(json.encoder.JSONEncoder):
@@ -38,7 +38,7 @@ class Encoder(json.encoder.JSONEncoder):
     
     def encode(self, o) -> str:
         unformatted = json.dumps(o)
-        formatted = fractured_json_rust_wrapper.reformat_string(
+        formatted = _rust_wrapper.reformat_string(
             unformatted,
             indent=self._indent,
             line_length=self.line_length

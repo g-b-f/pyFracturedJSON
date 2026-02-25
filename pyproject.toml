@@ -1,7 +1,10 @@
 [project]
 name = "pyfracturedjson"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 description = "A compact yet readable JSON formatter"
+readme = "README.md"
+packages = ["fracturedjson"]
+
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
@@ -16,6 +19,17 @@ Repository = "https://github.com/g-b-f/pyFracturedJSON"
 [build-system]
 requires = ["maturin>=1.11,<2.0"]
 build-backend = "maturin"
+
+[tool.mypy]
+check_untyped_defs = true
+follow_untyped_imports = true
+
+[tool.pytest.ini_options]
+filterwarnings = ["error"]
+
+[tool.maturin]
+
+include = ["fracturedjson/*"] 
 
 
 [tool.ruff.lint]

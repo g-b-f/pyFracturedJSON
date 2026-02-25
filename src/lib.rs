@@ -13,7 +13,7 @@ fn reformat_string(input: String, indent:usize, line_length: usize) -> String {
 }
 
 #[pymodule]
-fn fractured_json_rust_wrapper(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn _rust_wrapper(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(reformat_string, m)?)?;
     Ok(())
 }

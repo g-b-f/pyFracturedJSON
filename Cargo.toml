@@ -4,7 +4,7 @@ version = "1.0.0"
 edition = "2024"
 
 [lib]
-name = "fractured_json_rust_wrapper"
+name = "_rust_wrapper"
 crate-type = ["cdylib"]
 
 [dependencies]
