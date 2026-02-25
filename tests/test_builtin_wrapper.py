@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-import FracturedJSON as json
+import fracturedjson as json
 
 params = [
     ("default_settings.json", {}),

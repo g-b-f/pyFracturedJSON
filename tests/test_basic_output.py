@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from FracturedJSON import Encoder
+from fracturedjson import Encoder
 
 params = [
     ("default_settings.json", {}),
