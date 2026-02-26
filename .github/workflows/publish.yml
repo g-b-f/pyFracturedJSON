@@ -94,10 +94,11 @@ jobs:
                     "thing_9",  "thing_10", "thing_11", "thing_12", "thing_13", "thing_14", "thing_15", "thing_16", "thing_17",
                     "thing_18", "thing_19"
                 ]
-            }"""
+            }
+            """
             long_list = [f"thing_{i}" for i in range(20)]
             actual = dumps({"abcd": "abcd", "long_list": long_list})
-            assert actual == expected, f"unexpected format:\n\nexpected:\n{expected}actual:\n{actual}"
+            assert actual == expected, f"unexpected format:\n\nexpected:\n{expected}\nactual:\n{actual}"
             '
 
   musllinux:
