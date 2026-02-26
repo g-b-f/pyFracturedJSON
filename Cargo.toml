@@ -2,6 +2,7 @@
 name = "pyfracturedjson"
 version = "2.0.0"
 edition = "2024"
+license = "MIT"
 
 [lib]
 name = "_rust_wrapper"
