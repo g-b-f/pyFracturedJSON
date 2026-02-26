@@ -30,9 +30,7 @@ follow_untyped_imports = true
 filterwarnings = ["error"]
 
 [tool.maturin]
-
 include = ["fracturedjson/*"] 
-
 
 [tool.ruff.lint]
 extend-select = [
@@ -50,6 +48,4 @@ extend-select = [
 ]
 
 [dependency-groups]
-dev = [
-    "pytest>=8.3.5",
-]
+dev = ["pytest>=8.3.5"]

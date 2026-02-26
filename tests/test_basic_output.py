@@ -11,7 +11,7 @@ params = [
     ("indent_2.json", {"indent":2}),
 ]
 
-def read_file(filename) -> tuple[str, dict]:
+def read_file(filename:str) -> tuple[str, dict]:
     file = Path(__file__).parent / filename
     file_contents = file.read_text()
     return (file_contents, json.loads(file_contents))

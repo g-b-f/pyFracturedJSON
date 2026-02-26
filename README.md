@@ -20,7 +20,7 @@ with open("file.json", "w") as f:
     json.dump(data, f, cls=Encoder)
 ```
 
-You can also use it as a drop-in replacement for the `json` module:
+You can also use it as a drop-in replacement for the built-in `json` module:
 
 ```python
 import fracturedjson as json
