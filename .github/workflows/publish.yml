@@ -80,9 +80,11 @@ jobs:
             merge-multiple: true
 
         - name: Install local wheel
-          run: pip install dist/*.whl
+          run: |
+            ARCH=$(python3 -c 'import platform; print(platform.machine())')
+            pip install dist/*${ARCH}*.whl
 
-        - name: Test import and smoke test
+        - name: Import and smoke test
           run: |
             python -c '
             from FracturedJSON import dumps
