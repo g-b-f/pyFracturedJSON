@@ -72,9 +72,6 @@ jobs:
           with:
             python-version: '3.11'
 
-        - name: Get arch name
-          run: python3 -c 'import platform; print(platform.machine())'
-
         - name: Download wheel
           uses: actions/download-artifact@v4
           with:
@@ -88,7 +85,7 @@ jobs:
         - name: Import and smoke test
           run: |
             python -c '
-            from FracturedJSON import dumps
+            from fracturedjson import dumps
 
             expected="""{
                 "abcd"     : "abcd",
