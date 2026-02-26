@@ -28,9 +28,9 @@ jobs:
   linux:
     runs-on: ${{ matrix.platform.runner }}
     needs: test
-    continue-on-error: true # DEBUG: remove for prod
+    # continue-on-error: true # DEBUG: remove for prod
     strategy:
-      fail-fast: false # DEBUG: remove for prod
+      # fail-fast: false # DEBUG: remove for prod
       matrix:
         platform:
           - runner: ubuntu-22.04
@@ -80,9 +80,7 @@ jobs:
             merge-multiple: true
 
         - name: Install local wheel
-          run: |
-            ARCH=$(python3 -c 'import platform; print(platform.machine())')
-            pip install dist/*${ARCH}*.whl
+          run: pip install --use-wheel --no-index --find-links=dist/ pyfracturedjson
 
         - name: Import and smoke test
           run: |
@@ -104,7 +102,7 @@ jobs:
 
   musllinux:
     runs-on: ${{ matrix.platform.runner }}
-    needs: test_install
+    needs: test
     strategy:
       matrix:
         platform:
@@ -136,7 +134,7 @@ jobs:
 
   windows:
     runs-on: ${{ matrix.platform.runner }}
-    needs: test_install
+    needs: test
     strategy:
       matrix:
         platform:
@@ -169,7 +167,7 @@ jobs:
 
   macos:
     runs-on: ${{ matrix.platform.runner }}
-    needs: test_install
+    needs: test
     strategy:
       matrix:
         platform:
@@ -196,7 +194,7 @@ jobs:
 
   sdist:
     runs-on: ubuntu-latest
-    needs: test_install
+    needs: test
     steps:
       - uses: actions/checkout@v6
       - name: Build sdist
@@ -240,3 +238,18 @@ jobs:
           run: uv publish dist/*
           env:
             UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+
+  # smoke_test_pypi:
+  #     name: Public PyPI Check
+  #     runs-on: ubuntu-latest
+  #     needs: release
+  #     environment: 
+  #       name: pypi-propagation 
+  #     steps:
+  #       - uses: actions/setup-python@v6
+  #         with:
+  #           python-version: '3.11'
+  #       - name: Install from PyPI
+  #         run: pip install --no-cache-dir pyfracturedjson
+  #       - name: Verify
+  #         run: python -c "import FracturedJSON"
