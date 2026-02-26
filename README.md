@@ -7,7 +7,7 @@ Using it is easy:
 
 ```python
 import json
-from FracturedJSON import Encoder
+from fracturedjson import Encoder
 
 long_list = [f"thing_{i}" for i in range(20)]
 data = {"abcd": "abcd", "long_list": long_list}
@@ -23,7 +23,7 @@ with open("file.json", "w") as f:
 You can also use it as a drop-in replacement for the `json` module:
 
 ```python
-import FracturedJSON as json
+import fracturedjson as json
 
 long_list = [f"thing_{i}" for i in range(20)]
 data = {"abcd": "abcd", "long_list": long_list}
@@ -34,6 +34,8 @@ print(json.dumps(data, indent=2))
 
 with open("file.json", "w") as f:
     json.dump(data, f)
+
+with open("file.json") as f:
     json.load(f)
 
 json.loads('{"foo":"bar"}')
