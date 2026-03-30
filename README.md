@@ -41,5 +41,5 @@ with open("file.json") as f:
 json.loads('{"foo":"bar"}')
 ```
 
-This is mostly a wrapper around [fracturedjson-rs](https://github.com/fcoury/fracturedjson-rs),
-so all credit goes to the creator.
+This is largely a wrapper around [fracturedjson-rs](https://github.com/fcoury/fracturedjson-rs),
+so credit to the creator.
