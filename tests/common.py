@@ -1,11 +1,12 @@
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
 
 root = Path(__file__).parent.parent
 sys.path.append(str(root))
 
 from fracturedjson import Encoder
+
 
 def read_file(filename:str) -> tuple[str, dict]:
     file = Path(__file__).parent / filename

@@ -4,8 +4,8 @@ from pathlib import Path
 import pytest
 
 from fracturedjson import Encoder
-
 from tests.common import params, read_file
+
 
 @pytest.mark.parametrize(("filename", "kwargs"), params)
 def test_roundtrip(filename:str, kwargs:dict):
