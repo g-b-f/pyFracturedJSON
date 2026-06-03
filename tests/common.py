@@ -15,9 +15,12 @@ def read_file(filename:str) -> tuple[str, dict]:
 kwargType = dict[str, str | int]
 paramType = tuple[str, kwargType]
 
+default_settings = "default_settings.json"
 _params: list[paramType] = [
-    ("default_settings.json", {}),
+    (default_settings, {}),
+
     ("line_len_100.json", {"line_length":100}),
+
     ("indent_2.json", {"indent":2}),
 
     ("inline_complexity_-1.json", {"max_inline_complexity":-1}),
@@ -31,7 +34,7 @@ _params: list[paramType] = [
     ("table_row_complexity_-1.json", {"max_table_row_complexity":-1}),
     ("table_row_complexity_0.json", {"max_table_row_complexity":0}),
     ("table_row_complexity_1.json", {"max_table_row_complexity":1}),
-    
+
     ("number_list_alignment_left.json", {"number_list_alignment":"left"}),
     ("number_list_alignment_decimal.json", {"number_list_alignment":"decimal"}),
     ("number_list_alignment_right.json", {"number_list_alignment":"right"}),
@@ -42,11 +45,11 @@ JSONS_DIR = "JSONs/"
 params = [(JSONS_DIR+f, kw) for f, kw in _params]
 
 def generate_jsons():
+    file_str, file_dict = read_file(JSONS_DIR + default_settings)
     for filename, kwargs in params:
-        file_str, file_dict = read_file(filename)
         file = "tests/" + filename
         with open(file, "w") as f:
-            json.dump(file_dict, f, cls=Encoder, **kwargs)
+            json.dump(file_dict, f, cls=Encoder, **kwargs) #type: ignore[arg-type]
 
 if __name__ == "__main__":
     generate_jsons()

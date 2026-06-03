@@ -1,5 +1,5 @@
 {
-  "BasicObject"   : {
+  "BasicObject": {
     "ModuleId"   : "armor",
     "Name"       : "",
     "Locations"  : [
@@ -12,7 +12,7 @@
     "Orientation": "Fore",
     "Seed"       : 272691529
   },
-  "SimilarArrays" : {
+  "SimilarArrays": {
     "Katherine": ["blue",       "lightblue", "black"       ],
     "Logan"    : ["yellow",     "blue",      "black", "red"],
     "Erik"     : ["red",        "purple"                   ],
@@ -23,5 +23,30 @@
     { "type": "assassin",  "hp":  80, "loc": {"x": 12, "y":   6}, "flags": "Q"   },
     { "type": "berserker", "hp": 150, "loc": {"x":  0, "y":   0}                 },
     { "type": "pittrap",              "loc": {"x": 10, "y": -14}, "flags": "S,I" }
-  ]
+  ],
+  "NumberAlignmentTests": [
+    {"a":    123.456 , "b": 0   , "c":   0  },
+    {"a": 234567.8   , "b": 0   , "c":   0  },
+    {"a":      3     , "b": 0.0 , "c": 700.0},
+    {"a":   null     , "b": 0.2 , "c": 800.0},
+    {"a":      5.6789, "b": 0.35, "c":   0  }
+  ],
+  "InlineComplexityTests": {
+    "Subthing1"  : {"X": 55, "Y": 19, "Z": -4},
+    "Subthing2"  : { "Q": null, "W": [-2, -1, 0, 1] },
+    "Distraction": [[], null, null]
+  },
+  "CompactArrayComplexityTest_1": [
+      2,   3,   5,   7,  11,  13,  17,  19,  23,  29,  31,  37,  41,  43,  47,  53,  59,  61,  67,  71,  73,  79,  83,
+     89,  97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199
+  ],
+  "CompactArrayComplexityTest_2": [
+    [19,  2], [ 3,  8], [14,  0], [ 9,  9], [ 9,  9], [ 0,  3], [10,  1], [ 9,  1], [ 9,  2], [ 6, 13], [18,  5],
+    [ 4, 11], [12,  2]
+  ],
+  "TableRowComplexityTests": {
+    "Rect" : { "position": {"x": -44, "y":  3.4        }, "color": [0, 255, 255] },
+    "Point": { "position": {          "y": 22.0, "z": 3}                         },
+    "Oval" : { "position": null,                          "color": "#7f3e96"     }
+  }
 }
