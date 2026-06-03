@@ -6,9 +6,9 @@ import pytest
 import fracturedjson as json
 
 params = [
-    ("default_settings.json", {}),
-    ("line_len_100.json", {"line_length":100}),
-    ("indent_2.json", {"indent":2}),
+    ("JSONs/default_settings.json", {}),
+    ("JSONs/line_len_100.json", {"line_length":100}),
+    ("JSONs/indent_2.json", {"indent":2}),
 ]
 
 def read_file(filename:str) -> tuple[str, dict]:
