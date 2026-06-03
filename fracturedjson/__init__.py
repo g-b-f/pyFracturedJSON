@@ -17,6 +17,10 @@ class Encoder(json.encoder.JSONEncoder):
             indent = 4,
             separators: tuple[str, str] | None = None,
             default: Callable | None = None,
+            max_inline_complexity = 2,
+            max_compact_array_complexity = 2,
+            max_table_row_complexity = 2,
+            number_list_alignment= "decimal",
             **kwargs
         ):
         super().__init__(
@@ -34,6 +38,11 @@ class Encoder(json.encoder.JSONEncoder):
             indent = 4
         self._indent = indent
         self.line_length = kwargs.get("line_length", 120)
+        self.max_inline_complexity = max_inline_complexity
+        self.max_compact_array_complexity = max_compact_array_complexity
+        self.max_table_row_complexity = max_table_row_complexity
+        self.number_list_alignment = number_list_alignment
+
         
     
     def encode(self, o) -> str:
@@ -41,7 +50,11 @@ class Encoder(json.encoder.JSONEncoder):
         formatted = _rust_wrapper.reformat_string(
             unformatted,
             indent=self._indent,
-            line_length=self.line_length
+            line_length=self.line_length,
+            max_inline_complexity = self.max_inline_complexity,
+            max_compact_array_complexity = self.max_compact_array_complexity,
+            max_table_row_complexity = self.max_table_row_complexity,
+            number_list_alignment = self.number_list_alignment
         )
         return formatted
     
