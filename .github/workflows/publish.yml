@@ -191,6 +191,32 @@ jobs:
           name: wheels-macos-${{ matrix.platform.target }}
           path: dist
 
+  android:
+      runs-on: ubuntu-latest
+      needs: test_install
+      strategy:
+        matrix:
+          platform:
+            - aarch64-linux-android
+            - x86_64-linux-android
+            # - armv7-linux-androideabi
+      steps:
+        - uses: actions/checkout@v6
+        - uses: actions/setup-python@v6
+          with:
+            python-version: 3.x
+        - name: Build wheels
+          uses: PyO3/maturin-action@v1
+          with:
+            target: ${{ matrix.platform }}
+            args: --release --out dist -i python3.12
+            sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        - name: Upload wheels
+          uses: actions/upload-artifact@v5
+          with:
+            name: wheels-android-${{ matrix.platform }}
+            path: dist
+
   sdist:
     runs-on: ubuntu-latest
     needs: test_install
@@ -210,7 +236,7 @@ jobs:
   release:
       name: Release
       runs-on: ubuntu-latest
-      needs: [linux, musllinux, windows, macos, sdist, test_install]
+      needs: [linux, musllinux, windows, macos, android, sdist, test_install]
       if: startsWith(github.ref, 'refs/tags/v') 
       permissions:
         id-token: write
