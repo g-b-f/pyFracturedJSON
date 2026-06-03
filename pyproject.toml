@@ -17,6 +17,7 @@ dynamic = ["version"]
 
 [project.urls]
 Repository = "https://github.com/g-b-f/pyFracturedJSON"
+Changelog  = "https://github.com/g-b-f/pyFracturedJSON/blob/master/CHANGELOG.md"
 
 [build-system]
 requires = ["maturin>=1.11,<2.0"]
