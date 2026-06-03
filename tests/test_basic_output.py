@@ -5,16 +5,7 @@ import pytest
 
 from fracturedjson import Encoder
 
-params = [
-    ("JSONs/default_settings.json", {}),
-    ("JSONs/line_len_100.json", {"line_length":100}),
-    ("JSONs/indent_2.json", {"indent":2}),
-]
-
-def read_file(filename:str) -> tuple[str, dict]:
-    file = Path(__file__).parent / filename
-    file_contents = file.read_text()
-    return (file_contents, json.loads(file_contents))
+from tests.common import params, read_file
 
 @pytest.mark.parametrize(("filename", "kwargs"), params)
 def test_roundtrip(filename:str, kwargs:dict):
