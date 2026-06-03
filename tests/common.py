@@ -20,8 +20,10 @@ _params: list[paramType] = [
     (default_settings, {}),
 
     ("line_len_100.json", {"line_length":100}),
+    ("line_len_40.json", {"line_length":40}),
 
     ("indent_2.json", {"indent":2}),
+    ("indent_3.json", {"indent":3}),
 
     ("inline_complexity_-1.json", {"max_inline_complexity":-1}),
     ("inline_complexity_0.json", {"max_inline_complexity":0}),
@@ -45,6 +47,9 @@ JSONS_DIR = "JSONs/"
 params = [(JSONS_DIR+f, kw) for f, kw in _params]
 
 def generate_jsons():
+    """Running this function will render the tests useless if you're not careful!
+    Check that the results are as expected!
+    """
     file_str, file_dict = read_file(JSONS_DIR + default_settings)
     for filename, kwargs in params:
         file = "tests/" + filename
