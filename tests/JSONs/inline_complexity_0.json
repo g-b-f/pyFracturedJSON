@@ -32,9 +32,18 @@
         {"a":      5.6789, "b": 0.35, "c":   0  }
     ],
     "InlineComplexityTests": {
-        "Subthing1"  : {"X": 55, "Y": 19, "Z": -4},
-        "Subthing2"  : { "Q": null, "W": [-2, -1, 0, 1] },
-        "Distraction": [[], null, null]
+        "Subthing1"  : {
+            "X": 55,
+            "Y": 19,
+            "Z": -4
+        },
+        "Subthing2"  : {
+            "Q": null,
+            "W": [-2, -1, 0, 1]
+        },
+        "Distraction": [
+            [],   null, null
+        ]
     },
     "CompactArrayComplexityTest_1": [
           2,   3,   5,   7,  11,  13,  17,  19,  23,  29,  31,  37,  41,  43,  47,  53,  59,  61,  67,  71,  73,  79,

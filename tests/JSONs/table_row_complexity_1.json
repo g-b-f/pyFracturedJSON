@@ -19,10 +19,10 @@
         "Jean"     : ["lightgreen", "yellow",    "black"       ]
     },
     "SimilarObjects": [
-        { "type": "turret",    "hp": 400, "loc": {"x": 47, "y":  -4}, "flags": "S"   },
-        { "type": "assassin",  "hp":  80, "loc": {"x": 12, "y":   6}, "flags": "Q"   },
-        { "type": "berserker", "hp": 150, "loc": {"x":  0, "y":   0}                 },
-        { "type": "pittrap",              "loc": {"x": 10, "y": -14}, "flags": "S,I" }
+        { "type": "turret", "hp": 400, "loc": {"x": 47, "y": -4}, "flags": "S" },
+        { "type": "assassin", "hp": 80, "loc": {"x": 12, "y": 6}, "flags": "Q" },
+        { "type": "berserker", "hp": 150, "loc": {"x": 0, "y": 0} },
+        { "type": "pittrap", "loc": {"x": 10, "y": -14}, "flags": "S,I" }
     ],
     "NumberAlignmentTests": [
         {"a":    123.456 , "b": 0   , "c":   0  },
@@ -46,8 +46,8 @@
         [ 4, 11], [12,  2]
     ],
     "TableRowComplexityTests": {
-        "Rect" : { "position": {"x": -44, "y":  3.4        }, "color": [0, 255, 255] },
-        "Point": { "position": {          "y": 22.0, "z": 3}                         },
-        "Oval" : { "position": null,                          "color": "#7f3e96"     }
+        "Rect" : { "position": {"x": -44, "y": 3.4}, "color": [0, 255, 255] },
+        "Point": { "position": {"y": 22.0, "z": 3} },
+        "Oval" : {"position": null, "color": "#7f3e96"}
     }
 }
