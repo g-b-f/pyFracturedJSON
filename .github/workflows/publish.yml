@@ -198,8 +198,8 @@ jobs:
         matrix:
           platform:
             - aarch64-linux-android
-            - armv7-linux-androideabi
             - x86_64-linux-android
+            # - armv7-linux-androideabi
       steps:
         - uses: actions/checkout@v6
         - uses: actions/setup-python@v6
