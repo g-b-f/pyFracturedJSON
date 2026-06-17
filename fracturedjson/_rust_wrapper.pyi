@@ -8,7 +8,8 @@ def reformat_string(
         max_inline_complexity:int,
         max_compact_array_complexity:int,
         max_table_row_complexity:int,
-        number_list_alignment:str
+        number_list_alignment:str,
+        max_prop_name_padding:int
         ) -> str:
     """Reformat a JSON string.
     

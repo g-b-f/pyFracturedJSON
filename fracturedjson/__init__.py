@@ -21,6 +21,7 @@ class Encoder(json.encoder.JSONEncoder):
             max_compact_array_complexity = 2,
             max_table_row_complexity = 2,
             number_list_alignment= "decimal",
+            max_prop_name_padding = 16,
             **kwargs
         ):
         super().__init__(
@@ -42,6 +43,7 @@ class Encoder(json.encoder.JSONEncoder):
         self.max_compact_array_complexity = max_compact_array_complexity
         self.max_table_row_complexity = max_table_row_complexity
         self.number_list_alignment = number_list_alignment
+        self.max_prop_name_padding = max_prop_name_padding
 
         
     
@@ -54,7 +56,8 @@ class Encoder(json.encoder.JSONEncoder):
             max_inline_complexity = self.max_inline_complexity,
             max_compact_array_complexity = self.max_compact_array_complexity,
             max_table_row_complexity = self.max_table_row_complexity,
-            number_list_alignment = self.number_list_alignment
+            number_list_alignment = self.number_list_alignment,
+            max_prop_name_padding = self.max_prop_name_padding
         )
         return formatted
     

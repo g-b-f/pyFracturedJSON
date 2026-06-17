@@ -9,7 +9,8 @@ fn reformat_string(
     max_inline_complexity: isize,
     max_compact_array_complexity: isize,
     max_table_row_complexity: isize,
-    number_list_alignment: &str
+    number_list_alignment: &str,
+    max_prop_name_padding: usize
 ) -> String {
     let mut formatter = Formatter::new();
     formatter.options.max_total_line_length = line_length;
@@ -17,6 +18,7 @@ fn reformat_string(
     formatter.options.max_inline_complexity = max_inline_complexity;
     formatter.options.max_compact_array_complexity = max_compact_array_complexity;
     formatter.options.max_table_row_complexity = max_table_row_complexity;
+    formatter.options.max_prop_name_padding = max_prop_name_padding;
 
     match number_list_alignment {
         "left" => formatter.options.number_list_alignment = NumberListAlignment::Left,
