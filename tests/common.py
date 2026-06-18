@@ -42,6 +42,10 @@ _params: list[paramType] = [
     ("number_list_alignment_decimal.json", {"number_list_alignment":"decimal"}),
     ("number_list_alignment_right.json", {"number_list_alignment":"right"}),
     ("number_list_alignment_normalize.json", {"number_list_alignment":"normalize"}),
+
+    ("max_prop_name_padding_0.json", {"max_prop_name_padding":0}),
+    ("max_prop_name_padding_10.json", {"max_prop_name_padding":10}),
+    ("max_prop_name_padding_24.json", {"max_prop_name_padding":24}),
 ]
 
 JSONS_DIR = "JSONs/"
