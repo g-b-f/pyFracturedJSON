@@ -4,7 +4,7 @@ use fracturedjson::{Formatter, NumberListAlignment};
 #[pyfunction]
 fn reformat_string(
     input: String,
-    indent:usize,
+    indent: usize,
     line_length: usize,
     max_inline_complexity: isize,
     max_compact_array_complexity: isize,
