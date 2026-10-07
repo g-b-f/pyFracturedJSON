@@ -1,8 +1,12 @@
 import json
 from collections.abc import Iterator
 from typing import Callable
+from typing import TYPE_CHECKING
 
-import _rust_wrapper
+if TYPE_CHECKING:
+    from fracturedjson import _rust_wrapper # type: ignore[reportMissingModuleSource]
+else:
+    import _rust_wrapper
 
 
 class Encoder(json.encoder.JSONEncoder):
@@ -231,5 +235,5 @@ def loads(fp, *, cls=None, object_hook=None, parse_float=None,
     return json.loads(fp, cls=cls, object_hook=object_hook, parse_float=parse_float,
         parse_int=parse_int, parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
 
-def detect_encoding(b):
+def detect_encoding(b: bytes | bytearray):
     return json.detect_encoding(b)

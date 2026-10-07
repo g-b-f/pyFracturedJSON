@@ -5,10 +5,12 @@
 **Adds [FracturedJSON](https://github.com/j-brooke/FracturedJson) support to python,
 letting you create JSON that is both compact and readable.**
 
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fpyfracturedjson%2Fjson&query=%24.info.version&prefix=v&label=pypi&cacheSeconds=3600)
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fpyfracturedjson%2Fjson&query=%24.info.requires_python&label=requires%20python&cacheSeconds=3600)
-
+<a href="https://pypi.org/project/pyfracturedjson">
+<img alt="PyPI Version" src="https://img.shields.io/pypi/v/pyfracturedjson?cacheSeconds=3600">
+<img alt="minimum python version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fpyfracturedjson%2Fjson&query=%24.info.requires_python&label=requires%20python&cacheSeconds=3600">
+</a>
 </div>
+</br>
 
 You can trivially use it as a drop-in replacement for the built-in `json` module:
 
