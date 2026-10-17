@@ -14,7 +14,7 @@ jobs:
       id-token: write
       contents: write
       attestations: write
-    uses: g-b-f/workflows/.github/workflows/maturin_publish.yaml@v1
+    uses: g-b-f/workflows/.github/workflows/maturin_publish.yaml@v2
     with:
       package-name: pyFracturedJSON
       smoke-test-script: |
