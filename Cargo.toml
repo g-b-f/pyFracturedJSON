@@ -4,8 +4,10 @@ version = "2.2.0"
 edition = "2024"
 license = "MIT"
 
-[package.metadata.maturin]
-compatibility = "abi3"
+[features]
+default = ["abi3-py39"]
+abi3-py39 = ["pyo3/abi3-py39"]
+abi3-py314 = ["pyo3/abi3-py314"]
 
 [lib]
 name = "_rust_wrapper"
@@ -15,5 +17,5 @@ crate-type = ["cdylib"]
 fracturedjson = "0.1.1"
 
 [dependencies.pyo3]
-version = "0.29.3"
-features = ["extension-module", "abi3-py39"]
+version = "0.29"
+features = ["extension-module"]
