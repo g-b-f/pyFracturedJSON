@@ -16,7 +16,7 @@ jobs:
       attestations: write
     uses: g-b-f/workflows/.github/workflows/maturin_publish.yaml@master
     with:
-      package-name: fracturedjson
+      package-name: pyFracturedJSON
       smoke-test-script: |
         python -c '
         from fracturedjson import dumps
