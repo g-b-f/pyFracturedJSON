@@ -9,8 +9,7 @@ license-files = ["LICENSE"]
 
 classifiers = [
     "Programming Language :: Rust",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: Implementation :: CPython"
 ]
 keywords = ["json", "formatter", "fracturedjson", "compact", "readable"]
 dynamic = ["version"]
